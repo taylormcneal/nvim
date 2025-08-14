@@ -1,14 +1,15 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
+-- Basic keymaps
+vim.keymap.set("n", "<leader>w", "<cmd>write<CR>", { desc = "Save file" })
+vim.keymap.set("n", "<leader>q", "<cmd>quit<CR>", { desc = "Quit" })
+vim.keymap.set("n", "<leader>Q", "<cmd>qall<CR>", { desc = "Quit all" })
+vim.keymap.set("n", "<leader>x", "<cmd>bdelete<CR>", { desc = "Previous buffer" })
 
 -- Buffer navigation
 vim.keymap.set("n", "<C-h>", "<cmd>bprevious<CR>", { desc = "Previous buffer" })
 vim.keymap.set("n", "<C-l>", "<cmd>bnext<CR>", { desc = "Next buffer" })
-
--- Delete buffer
-vim.keymap.set("n", "<leader>bd", "<cmd>bdelete<CR>", { desc = "Previous buffer" })
 
 -- Keep selection after indentation
 vim.keymap.set("v", "<", "<gv", { desc = "Indent left" })
