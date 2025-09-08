@@ -1,11 +1,10 @@
-vim.g.mapleader = " "
-vim.g.maplocalleader = "\\"
-
 -- Basic keymaps
 vim.keymap.set("n", "<leader>w", "<cmd>write<CR>", { desc = "Save file" })
 vim.keymap.set("n", "<leader>q", "<cmd>quit<CR>", { desc = "Quit" })
 vim.keymap.set("n", "<leader>Q", "<cmd>qall<CR>", { desc = "Quit all" })
-vim.keymap.set("n", "<leader>x", "<cmd>bdelete<CR>", { desc = "Previous buffer" })
+vim.keymap.set("n", "<leader>x", function()
+    require("mini.bufremove").delete(0, false)
+end, { desc = "Previous buffer" })
 
 -- Buffer navigation
 vim.keymap.set("n", "<C-h>", "<cmd>bprevious<CR>", { desc = "Previous buffer" })
