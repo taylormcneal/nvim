@@ -56,5 +56,36 @@ return {
                 },
             },
         }
+
+        lspconfig.intelephense.setup{
+            capabilities = capabilities,
+            filetypes = { "php", "blade" },
+            settings = {
+                intelephense = {
+                    files = {
+                        maxSize = 5000000,
+                        exclude = { "**/vendor/**/", "**/node_modules/**/" },
+                    },
+                    environment = {
+                        includePaths = { "vendor" },
+                    },
+                    -- common stubs to improve completion/diagnostics
+                    stubs = { "apache", "bcmath", "Core", "date", "dom", "json", "pcre", "PDO", "session", "SPL", "standard" },
+                },
+            },
+        }
+
+        lspconfig.html.setup {
+            capabilities = capabilities,
+            filetypes = { "html", "blade" },
+        }
+
+        lspconfig.cssls.setup {
+            capabilities = capabilities,
+        }
+
+        lspconfig.ts_ls.setup {
+            capabilities = capabilities,
+        }
     end,
 }
