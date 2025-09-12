@@ -60,6 +60,9 @@ return {
         lspconfig.intelephense.setup{
             capabilities = capabilities,
             filetypes = { "php", "blade" },
+            init_options = {
+                globalStoragePath = os.getenv("HOME") .. "/.local/share/intelephense"
+            },
             settings = {
                 intelephense = {
                     files = {

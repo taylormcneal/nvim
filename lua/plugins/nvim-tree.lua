@@ -3,6 +3,7 @@ vim.g.loaded_netrwPlugin = 1
 
 return {
     "nvim-tree/nvim-tree.lua",
+    dependencies = { "DaikyXendo/nvim-material-icon" },
     config = function()
         require("nvim-tree").setup({
             tab = {
