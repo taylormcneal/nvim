@@ -12,7 +12,7 @@ return {
                     close = false,
                 },
             },
-            filter = {
+            filters = {
                 dotfiles = false,
             },
         })
