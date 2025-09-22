@@ -12,6 +12,9 @@ return {
                     close = false,
                 },
             },
+            filter = {
+                dotfiles = false,
+            },
         })
 
         vim.keymap.set("n", "<leader>pv", "<cmd>NvimTreeFindFileToggle<CR>", { desc = "Toggle project view" })

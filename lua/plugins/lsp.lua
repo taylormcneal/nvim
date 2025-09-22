@@ -17,10 +17,9 @@ return {
             }
         })
 
-        local lspconfig = require("lspconfig")
         local capabilities = require("blink.cmp").get_lsp_capabilities()
 
-        lspconfig.lua_ls.setup{
+        vim.lsp.config["lua_ls"] = {
             capabilities = capabilities,
             settings = {
                 Lua = {
@@ -44,7 +43,7 @@ return {
             },
         }
 
-        lspconfig.pyright.setup{
+        vim.lsp.config["pyright"] = {
             capabilities = capabilities,
             settings = {
                 python = {
@@ -57,7 +56,7 @@ return {
             },
         }
 
-        lspconfig.intelephense.setup{
+        vim.lsp.config["intelephense"] = {
             capabilities = capabilities,
             filetypes = { "php", "blade" },
             init_options = {
@@ -78,16 +77,16 @@ return {
             },
         }
 
-        lspconfig.html.setup {
+        vim.lsp.config["html"] = {
             capabilities = capabilities,
             filetypes = { "html", "blade" },
         }
 
-        lspconfig.cssls.setup {
+        vim.lsp.config["cssls"] = {
             capabilities = capabilities,
         }
 
-        lspconfig.ts_ls.setup {
+        vim.lsp.config["ts_ls"] = {
             capabilities = capabilities,
         }
     end,
