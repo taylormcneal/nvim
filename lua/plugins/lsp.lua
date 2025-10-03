@@ -56,6 +56,19 @@ return {
             },
         }
 
+        vim.lsp.config["clangd"] = {
+            capabilities = capabilities,
+            cmd = {
+                "clangd",
+                "--background-index",
+                "--clangd-tidy",
+                "--header-insertion=iwyu",
+                "--completion-style=detailed",
+                "--function-arg-placeholders",
+            },
+            filetypes = { "c", "cpp", "objc", "objcpp", "cuda" },
+        }
+
         vim.lsp.config["intelephense"] = {
             capabilities = capabilities,
             filetypes = { "php", "blade" },
@@ -89,5 +102,14 @@ return {
         vim.lsp.config["ts_ls"] = {
             capabilities = capabilities,
         }
+
+        -- Enable LSP servers
+        vim.lsp.enable("lua_ls")
+        vim.lsp.enable("pyright")
+        vim.lsp.enable("clangd")
+        vim.lsp.enable("intelephense")
+        vim.lsp.enable("html")
+        vim.lsp.enable("cssls")
+        vim.lsp.enable("ts_ls")
     end,
 }
